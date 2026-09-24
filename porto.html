@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // Set tema sedini mungkin (sebelum CSS/paint) supaya tidak ada
+        // kedipan warna saat halaman pertama kali dibuka.
+        (function () {
+            try {
+                var tersimpan = localStorage.getItem('tema-portofolio');
+                var prefGelap = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var tema = tersimpan || (prefGelap ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', tema);
+            } catch (e) {}
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Augesta Yardha Husna, Mahasiswa Teknik Informatika Universitas Jember.">
+    <title>Augesta Yardha Husna | Portofolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="porto.css">
+</head>
+<body>
+
+    <header class="wadah-nama">
+        <div class="nav-dalam">
+            <a href="#beranda" id="judul-nama">AugestaHusna</a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#beranda" class="nav-link">Beranda</a>
+                <a href="#tentang" class="nav-link">Tentang</a>
+                <a href="#pendidikan" class="nav-link">Pendidikan</a>
+                <a href="#pengalaman" class="nav-link">Pengalaman</a>
+                <a href="#sertifikat" class="nav-link">Sertifikat</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
+                <button class="tombol-tema" id="tombolTema" type="button" aria-pressed="false" aria-label="Ganti ke mode gelap" title="Ganti mode terang/gelap">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="beranda" class="wadah-porto">
+
+            <div class="sambutan">
+                <H2 id="sambutan2">Halo Semua, Salam Kenal</H2>
+                <h1 id="NAMA">Augesta Yardha Husna</h1>
+                <h3 id="prodiangkatan">Mahasiswa IF 25
+                    <span id="UNIV">UNIVERSITAS JEMBER</span>
+                </h3>
+                <P id="deskripsi">Portofolio ini menampilkan perkembangan saya dan informasi mengenai saya dalam bidang teknologi</p>
+                <div class="tombol-sosial">
+                    <a href="#kontak" id="HBGIbtn">Hubungi Saya</a>
+                    <a href="https://instagram.com/yardhaaa" target="_blank" rel="noopener" aria-label="Instagram Augesta">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gesta-foto">
+                <img src="gesta.png" alt="Foto Augesta Yardha Husna">
+            </div>
+
+        </section>
+
+        <section id="tentang" class="bagian-tentang">
+            <div class="kontainer tentang-grid">
+
+                <div class="tentang-aksen" aria-hidden="true">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div class="tentang-isi">
+                    <h2 class="judul-bagian">Tentang Saya</h2>
+                    <p>
+                        Saya adalah mahasiswa Informatika angkatan 2025 di Universitas Jember.
+                        Saya senang mempelajari hal-hal baru di dunia teknologi, mulai dari dasar-dasar
+                        pemrograman, pengembangan web, hingga cara berpikir logis dalam menyelesaikan masalah.
+                        Melalui portofolio ini saya ingin mendokumentasikan proses belajar dan project
+                        kecil yang saya kerjakan selama menjadi mahasiswa.
+                    </p>
+
+                    <div class="baris-pendidikan">
+                        <span class="pendidikan">Universitas Jember</span>
+                        <span class="pendidikan">Informatika</span>
+                        <span class="pendidikan">Angkatan 2025</span>
+                    </div>
+
+                    <h3 class="subjudul-bagian">Sedang Saya Pelajari</h3>
+                    <ul class="daftar-skill">
+                        <li><i class="fa-brands fa-html5"></i> HTML &amp; CSS &amp; JS</li>
+                        <li><i class="fa-brands fa-laravel"></i> LARAVEL</li>
+                        <li><i class="fa-solid fa-diagram-project"></i> Logika &amp; Algoritma</li>
+                        <li><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</li>
+                        <li><i class="fa-brands fa-database"></i> Db &amp; SQL</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== PENDIDIKAN ===== -->
+        <section id="pendidikan" class="bagian-pendidikan">
+            <div class="kontainer">
+                <h2 class="judul-bagian">Pendidikan</h2>
+                <p class="lede">Riwayat pendidikan yang pernah dan sedang saya tempuh.</p>
+
+                <div class="linimasa">
+                    <div class="linimasa-item">
+                        <span class="linimasa-titik"></span>
+                        <span class="linimasa-tahun">2025 — Sekarang</span>
+                        <h3>S1 Informatika</h3>
+                        <p>Universitas Jember — Menempuh dan mempelajari dasar-dasar ilmu komputer, struktur data, algoritma, dan pengembangan perangkat lunak.</p>
+                    </div>
+                    <div class="linimasa-item">
+                        <span class="linimasa-titik"></span>
+                        <span class="linimasa-tahun">2022— 2025</span>
+                        <h3>Sekolah Menengah Atas Negeri</h3>
+                        <p>(SMAN 2 PARE) - Sudah Menyelesaikan</p>
+                    </div>
+                    <div class="linimasa-item">
+                        <span class="linimasa-titik"></span>
+                        <span class="linimasa-tahun">2019 — 2022</span>
+                        <h3>Sekolah Menengah Pertama Negeri</h3>
+                        <p>(SMPN 1 NGASEM) - Sudah Menyelesaikan</p>
+                    </div>
+                    <div class="linimasa-item">
+                        <span class="linimasa-titik"></span>
+                        <span class="linimasa-tahun">2012 — 2019</span>
+                        <h3>Sekolah Dasar Negeri</h3>
+                        <p>(SDN 1 BULUPASAR) - Sudah Menyelesaikan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PENGALAMAN ===== -->
+        <section id="pengalaman" class="bagian-pengalaman">
+            <div class="kontainer">
+                <h2 class="judul-bagian">Pengalaman &amp; Organisasi</h2>
+                <p class="lede">Kegiatan, kepanitiaan, atau pelatihan yang pernah saya ikuti.</p>
+
+                <div class="grid-pengalaman">
+                    <div class="kartu-pengalaman">
+                        <i class="fa-solid fa-users"></i>
+                        <h3>[Himpunan Mahasiswa Informatika / HMIF]</h3>
+                        <span class="tahun-kecil">[2025-2026]</span>
+                        <p>[Pada Organisasi ini saya masuk ke divisi Litbang,
+                            Litbang merupakan Divisi yang bertugas melakukan Penelitian dan Pengembangan (Litbang) Himpunan Mahasiswa Informatika, 
+                            berfokus pada riset dan pengembangan program kerja untuk mendukung kemajuan akademik dan teknologi di himpunan."]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERTIFIKAT ===== -->
+        <section id="sertifikat" class="bagian-sertifikat">
+            <div class="kontainer">
+                <h2 class="judul-bagian judul-terang">Sertifikat</h2>
+                <p class="lede lede-terang">Sertifikat pelatihan atau kursus yang pernah saya selesaikan.</p>
+
+                <div class="grid-sertifikat">
+                    <div class="kartu-sertifikat">
+                        <i class="fa-solid fa-certificate"></i>
+                        <h3>[Sertifikat Kepanitiaan PEMANTIK]</h3>
+                        <span>[HMIF] · [2026]</span>
+                    </div>
+                    <div class="kartu-sertifikat">
+                        <i class="fa-solid fa-certificate"></i>
+                        <h3>[Sertifikat Kepanitiaan COMPILER]</h3>
+                        <span>[HMIF] · [2026]</span>
+                    </div>
+                    <div class="kartu-sertifikat">
+                        <i class="fa-solid fa-certificate"></i>
+                        <h3>[Sertifikat Kepanitiaan MAKRAB]</h3>
+                        <span>[HMIF] · [2026]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== KONTAK / FOOTER ===== -->
+    <footer id="kontak" class="wadah-footer">
+        <div class="kontainer footer-atas">
+            <h2 class="judul-bagian judul-terang">Mari Terhubung</h2>
+            <p class="lede lede-terang">Tertarik berdiskusi seputar teknologi atau sekadar menyapa? Jangan ragu menghubungi saya.</p>
+
+            <div class="tombol-sosial footer-sosial">
+                <a href="https://instagram.com/yardhaaa" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="mailto:augestahusna@gmail.com" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/6285730001556" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://github.com/Agestaaa" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="kontainer footer-bawah">
+            <span>© 2026 Augesta Yardha Husna</span>
+            <span>Mahasiswa Teknik Informatika, Universitas Jember</span>
+        </div>
+    </footer>
+
+    <script src="porto.js"></script>
+</body>
+</html>
